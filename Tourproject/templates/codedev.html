@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=0">
+    <title>Nom Tour Co</title>
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+
+<body>
+    <header>
+        <h1>nomiS  <span style="color: red;">Tour co</span></h1>
+
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h3 class="toggle">
+            <span id="toggleText">Already have an account? </span>
+            <a onclick="toggleForm()" id="toggleLink">Login</a>
+        </h3>
+
+        <h2>Signup</h2>
+       <form id="userForm" method="POST" action="/register">
+    <table>
+        <tr id="firstRow">
+            <td><input type="text" name="first_name" placeholder="First Name" required></td>
+            <td><input type="text" name="last_name" placeholder="Last Name" required></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="email" name="email" placeholder="Email" style="width: 100%;" required></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="password" name="password" placeholder="Password" style="width: 100%;" required></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button type="submit" style="width: 100%;">Register</button></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"> Remember me</td>
+            <td><a href="#">Terms & Conditions</a></td>
+        </tr>
+    </table>
+</form>
+
+    </main>
+    <script src="{{ url_for('static', filename='toggle.js')}}"></script>
+</body>
+
+</html>
